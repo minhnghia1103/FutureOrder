@@ -105,7 +105,7 @@ const body_market_open: body_market_open = {
     openType: 1, // 1: isolated, 2: cross
     type: 5, // 5: market, 1: limit
     vol: 2, // 1vol = 5.9497 USDT
-    leverage: 10,
+    leverage: 10, // đòn bẩy
     marketCeiling: false,
     priceProtect: 0
 }
@@ -129,7 +129,17 @@ const body_limit_open: body_limit_open = {
     marketCeiling: false,
     priceProtect: 0
 }
+
+const body_limit_close: body_limit_close = {
+    symbol: 'BTC_USDT',
+    openType: 1,
+    side: 4,
+    type: 1,
+    vol: 2,
+    leverage: 11,
+    price: 59451,
+    priceProtect: 0
+}
 const cookie = 'kcex_theme_main=light; kcex_exchange_orderbook_col3=quan; g_state={"i_l":0}; kcex_base_fiat=VND; NEXT_LOCALE=vi-VN; kcex_reset_tradingview_key=false; _iidt=PtLergYtK5TKjAIuEbuqIlZstQtU6dHpZOQzHmZP3cln5xPEC1fPlIUjI3LnJvQRMdjguo8cT84drg==; _vid_t=jv9aldEv1dN4Ko/airBNsiH7lbaMHQTv0qQ+024Zh6153u/koTBFLiI9s8GewS5Sq8UGKv/FjEwagA==; Authorization=WEB9d51f674194fab1dc41d417746ae2f7fe28e6890d5c15dd20b6238b1f1a6232f; __zlcmid=1MumtKpLoaG8qnv; kcex_new_guidance=true'
 const authorization = 'WEB348596e998cc0ab8264a2d4f100f113054f85f6a5a32a9fc3ea2d75a75394769'
 orderFuture.futureOrder(body_limit_open, cookie, authorization)
-//orderFuture.closeFutureMarket(body_market_close, cookie, authorization)
